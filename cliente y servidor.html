@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+    <link rel="canonical" href="https://getbootstrap.com/docs/3.3/examples/blog/">
+
+    <title>Establecimiento de la conexión entre cliente y servidor, y desconexión en TCP</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="starter-template.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="blog-masthead">
+      <div class="container">
+        <nav class="blog-nav">
+          <li class="active"><a href="pagina web tcpy udp.html">Inicio</a></li>
+            <li><a href="que es y como funciona.html">¿Qué es y cómo funciona?</a></li>
+           <li><a href="caracteristicas.html">Principales características</a></li>
+            <li><a href="#">Establecimiento de la conexión entre cliente y servidor</a></li>
+            <li><a href="vulnerabilidad.html">Vulnerabilidades</a></li>
+  
+        </nav>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="blog-header">
+        <h1 class="blog-title">Establecimiento de la conexión entre cliente y servidor, y desconexión en TCP</h1>
+        <p class="lead blog-description">La principal característica del protocolo TCP es que es un protocolo orientado a conexión, para poder establecer una conexión entre cliente y servidor, es totalmente necesario establecer una conexión previa con dicho servidor.</p>
+      </div>
+
+      <div class="row">
+
+        <div class="col-sm-8 blog-main">
+
+          <div class="blog-post">
+            <h2 class="blog-post-title">Esta conexión previa se denomina 3-way handshake</h2>
+
+            <p>y consiste básicamente en que el cliente (el que inicia la conexión) envía un mensaje SYN al servidor (el que recibe la conexión). Posteriormente, el servidor le enviará un mensaje de tipo SYN-ACK, indicando que puede empezar a enviar información, finalmente, el cliente envía un ACK indicando que lo ha recibido correctamente, y ya se empieza a enviar toda la información entre cliente y servidor de manera bidireccional. Un detalle muy importante de TCP es que, genera números de secuencia por cada lado, ayudando que no se puedan establecer conexiones falsas entre ellos, aunque si el atacante está «en el medio», entonces sí se podría realizar un ataque MitM de tipo ARP Spoofing o similares, pero no a través de Internet. </p>
+
+            
+
+            <h3>Una de las vulnerabilidades de TCP radica en el envío de una gran cantidad de segmentos TCP SYN, con el objetivo de «saturar» de conexiones al receptor. Algunas posibles soluciones para mitigar este ataque de denegación de servicio son:</h3>
+            
+            <ul>
+              <li>Limitar el número de conexiones, ya sean conexiones globales o por IP.</li>
+              <li>Aceptar solamente conexiones a direcciones IP confiables.</li>
+              <li>Retrasar la asignación de recursos usando «cookies», o también denominado como SYN Cookies.</li>
+
+            </ul>
+      
+
+          <div class="blog-post">
+            <h2 class="blog-post-title">Para finalizar la conexión</h2>
+
+            <p>El que quiere finalizar la conexión envía un mensaje FIN, y el host que lo recibe enviará un mensaje ACK junto con otro mensaje FIN, de tal forma que, el equipo que ha iniciado la finalización de la conexión, le envíe un último ACK y se cerrará el socket abierto. Un detalle importante es que podemos tener una conexión «medio abierta», si un host finaliza la conexión y el otro no, el lado que ha finalizado la conexión no podrá enviar más datos, pero el que no la ha cerrado sí podrá seguir enviando información.</p>
+            
+
+          <div class="blog-post">
+            <h2 class="blog-post-title">Cabecera de TCP</h2>
+
+            <p>TCP añade 20 bytes de cabecera en cada segmento como mínimo, ya que tenemos un campo de «opcionales». En esta cabecera TCP encontraremos el puerto de origen y puerto de destino de la conexión (socket), también encontraremos el número de secuencia, número de ACK, y los diferentes FLAGS de TCP como SYN, ACK, RST, FIN, URG y otros. En esta cabecera también tenemos una parte muy importante para el funcionamiento de la ventana deslizante, y es que tendremos un campo de 16 bits que indica el tamaño de la ventana de recepción que os hemos explicado antes.</p>
+
+            <p>Los puertos (Source Port y Destination Port) son fundamentales para el buen funcionamiento de TCP. TCP usa estos números de puertos para identificar un socket, es decir, una aplicación que emite datos o que recibe datos. Los puertos TCP van desde el 0 hasta el 65535, pero tenemos tres tipos de puertos diferentes:</p>
+            <ul>
+              <li>Puertos conocidos: del 0 al 1023. Estos puertos están reservados por la IANA para determinadas aplicaciones, como servidor HTTP, FTP, SSH, y muchos otros puertos bien conocidos.</li>
+              <li>Puertos registrados: de 1024 al 49151. Estos puertos están reservados para aplicaciones concretas, como sistemas gestores de bases de datos, BitTorrent, y muchas otras aplicaciones.</li>
+              <li>Puertos privados: de 49152 a 65535. Estos puertos no están reservados por ninguna aplicación, y puedes usarlos libremente sin que afecte a ningún otro protocolo.</li>
+            </ul>
+          </div><!-- /.blog-post -->
+
+          <nav>
+            <ul class="pager">
+              <li><a href="#">inicio </a></li>
+              <li><a href="#">siguiente</a></li>
+            </ul>
+          </nav>
+
+       
+
+    <footer class="blog-footer">
+      <p>sem Alejandro Lopez Trujillo </a>.</p>
+      <p>
+        <a href="#">Back to top</a>
+      </p>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

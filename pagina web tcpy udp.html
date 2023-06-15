@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+    <link rel="canonical" href="https://getbootstrap.com/docs/3.3/examples/justified-nav/">
+
+    <title>Investigacion</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="starter-template.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <!-- The justified navigation menu is meant for single line per list item.
+           Multiple lines will require custom code not provided by Bootstrap. -->
+      <div class="masthead">
+        <h3 class="text-muted">TCP/UDP</h3>
+        <nav>
+          <ul class="nav nav-justified">
+            <li class="active"><a href="#">Inicio</a></li>
+            <li><a href="que es y como funciona.html">¿Qué es y cómo funciona?</a></li>
+            <li><a href="caracteristicas.html">Principales características</a></li>
+            <li><a href="cliente y servidor.html">Establecimiento de la conexión entre cliente y servidor</a></li>
+            <li><a href="vulnerabilidad.html">Vulnerabilidades</a></li>
+            
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Jumbotron -->
+      <div class="jumbotron">
+        <h1>¿Qué protocolo es mejor?: </h1>
+        <p class="lead">TCP vs UDP, descubre cuándo usar cada uno</p>
+        <p><a class="btn btn-lg btn-success" href="tcp y udp.html" role="button">Leer mas </a></p>
+      </div>
+
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-lg-4">
+          <h2>Qué es un Socket y para qué sirve</h2>
+          <p class="text-danger">Cuando dos procesos que están en hosts diferentes necesitan intercambiar información a través de la red, ya sea la red local o Internet, es necesario que abran un socket para establecer la comunicación y también para intercambiar cualquier flujo de datos. Generalmente el flujo de datos se hace de forma fiable y ordenada, no obstante, dependemos de si los procesos están utilizando el protocolo TCP o el protocolo UDP</p>
+        </div>
+        <div class="col-lg-4">
+          <h2>¿Cuántos socket se pueden tener en un equipo?</h2>
+          <p>Para cada una de las conexiones que realizamos fuera de nuestro equipo, necesitamos de un socket para que podamos intercambiar información entre los diferentes procesos. En un equipo en concreto podemos tener una gran cantidad de socket abiertos, aunque esto dependerá tanto del hardware del equipo como también del sistema operativo, ya que es el sistema operativo quien se encargará de gestionar todos los sockets (crearlos y borrarlos). Cuando abrimos un nuevo socket, este debe ser único para identificar la conexión unívocamente. </p>
+          
+       </div>
+        <div class="col-lg-4">
+          <h2>Componentes del Socket TCP/IP</h2>
+          <p>Dentro del modelo TCP/IP podemos diferenciar diferentes capas, las cuales están destinadas a una función de cara a establecer una comunicación. Se dividen en niveles y están coordinadas entre sí. Estas son: </p>
+          <p>Nivel de enlace o acceso: Es la primera capa que nos encontramos, y crea el acceso físico a la red. Esto se realiza especificando el modo en el que se deben enrutar los datos. Esto no se ve afectado por el tipo de red que utilizamos. </p>
+          <p>Nivel de red o Internet: Genera los paquetes de datos o datagramas, y se encarga de administrar las direcciones IP. Es considerada la capa más importante ya que cuenta con los protocolos IP, ARP, ICMP, EGMP o RARP. </p>
+          <p> Nivel de transporte: Esta capa se encarga de dar a conocer el estado de las transmisiones y los datos de enrutamiento. Para ello da uso de los puertos para realizar una asociación entre una aplicación y los datos.</p>
+          <p> Nivel de Aplicación: Es la parte más alta del protocolo TCP/IP, y se encarga de comunicar las aplicaciones con todas las capas anteriores.</p>
+          
+        </div>
+      </div>
+
+      <!-- Site footer -->
+      <footer class="footer">
+        <p>&copy; 2023 Sem Lopez .</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

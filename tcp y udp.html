@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+    <link rel="canonical" href="https://getbootstrap.com/docs/3.3/examples/blog/">
+
+    <title>TCP VS UDP</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="starter-template.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="blog-masthead">
+      <div class="container">
+        <nav class="blog-nav">
+          <li class="active"><a href="pagina web tcpy udp.html">Inicio</a></li>
+            <li><a href="que es y como funciona.html">¿Qué es y cómo funciona?</a></li>
+           <li><a href="caracteristicas.html">Principales características</a></li>
+            <li><a href="cliente y servidor.html">Establecimiento de la conexión entre cliente y servidor</a></li>
+            <li><a href="vulnerabilidad.html">Vulnerabilidades</a></li>
+        </nav>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="blog-header">
+        <h1 class="blog-title">TCP vs UDP, descubre cuándo usar cada uno</h1>
+        <p class="lead blog-description">TCP y UDP son dos protocolos fundamentales para las comunicaciones a través de Internet, ya que estos dos protocolos se sitúan en la capa de transporte del modelo TCP/IP, y es la primera capa donde origen y destino se comunican directamente, ya que las capas inferiores (capa de red y capa de acceso al medio) no realizan esta función. Hoy en RedesZone os vamos a explicar las principales características del protocolo TCP y del protocolo UDP, cuándo se utiliza cada uno, diferencias y usos principales.</p>
+      </div>
+
+      <div class="row">
+
+        <div class="col-sm-8 blog-main">
+
+          <div class="blog-post">
+            <h2 class="blog-post-title">TCP (Transmission Control Protocol): retrato del protocolo de transporte</h2>
+
+            <p>Cuando nos queremos conectar a Internet, solo necesitamos un par de maniobras para establecer una conexión entre el rúter y el ordenador o el terminal móvil. No se requieren más pasos, ya que el inicio de sesión en red es automático, al igual que la asignación de una dirección individual de Internet que necesitas para enviar y recibir datos. </p>
+            <hr>
+            <p>Todo ello es posible gracias a una serie de protocolos que también se conoce como familia de protocolos de Internet. En este contexto, uno de los miembros más importantes y antiguos es el protocolo de control de transmisión TCP, siglas de Transmission Control Protocol, y sirve para determinar cómo los dispositivos reunidos en la red deben transmitir sus datos.
+
+</p>
+            <blockquote>
+              <p>¿Qué es el Transport control Protocol?</p>
+            </blockquote>
+            <p>El protocolo TCP es un acuerdo estandarizado de transmisión de datos entre distintos participantes de una red informática. La historia de este protocolo se remonta hasta el año 1973, cuando los informáticos Robert E. Kahn y Vinton G. Cerf publicaron su primera versión en el marco de su trabajo de investigación. No obstante, tuvieron que pasar otros ocho años para que se estandarizara con el documento RFC 793. Desde entonces, se ha ido sucediendo una serie de mejoras y ampliaciones, aunque el núcleo del producto se mantiene sin cambios hasta hoy en día. La versión actual, publicada en el RFC 7323 es del año 2014.</p>
+            
+            <h2>¿Cómo funcionan exactamente las conexiones con el protocolo TCP?</h2>
+            <p>El protocolo de control de transmisión permite la transmisión de información en ambas direcciones. Por lo tanto, los sistemas informáticos que se comunican mediante TCP pueden enviar y recibir datos de forma simultánea, como si se tratase de una llamada telefónica. En este contexto, las unidades de transmisión básicas de las que echa mano el protocolo son segmentos (paquetes) que, aparte de los datos de uso, también pueden contener información de control y están limitados a un tamaño de 1500 bytes. El establecimiento y la interrupción de las conexiones, que se pueden catalogar como conexiones de terminal a terminal, así como la transmisión de datos en sí, la realiza el software TCP en la pila de protocolos de red del sistema operativo correspondiente.</p>
+
+            <h3>¿Qué significan los campos en UDP?</h3>
+            <p>Puerto de origen: es el número de puerto relacionado con la aplicación del remitente del segmento UDP. Este campo representa una dirección de respuesta para el destinatario. Por lo tanto, este campo es opcional. Esto significa que si el puerto de origen no está especificado, los 16 bits de este campo se pondrán en cero. En este caso, el destinatario no podrá responder (lo cual no es estrictamente necesario, en particular para mensajes unidireccionales).</p>
+<p>Puerto de destino: este campo contiene el puerto correspondiente a la aplicación del equipo receptor al que se envía.</p>
+<p>Longitud: este campo especifica la longitud total del segmento, con el encabezado incluido. Sin embargo, el encabezado tiene una longitud de 4 x 16 bits (que es 8 x 8 bits), por lo tanto la longitud del campo es necesariamente superior o igual a 8 bytes.</p>
+<p>Suma de comprobación: es una suma de comprobación realizada de manera tal que permita controlar la integridad del segmento.</p>
+
+            <h3>¿Cómo se estructura la cabecera UDP?</h3>
+            <p>Como es típico en todos los protocolos, los paquetes UDP consisten en una cabecera (header) y los datos reales del usuario. La cabecera UDP contiene toda la información necesaria para la transmisión de datos utilizando el protocolo de transporte y hace que un paquete UDP se pueda identificar como tal. La cabecera UDP consta de 4 campos y está dividida en 2 bloques de 32 bits con la siguiente estructura:</p>
+            <ul>
+              <li>Bits 0–15 : Cero  Puerto de origen,  32 Longitud del mensaje</li>
+              <li>Bits 16–31: cero Puerto de destino, 32 Suma de verificación</li>
+
+            </ul>
+            <p>La cabecera UDP se completa con la checksum o suma de comprobación, que se utiliza para detectar errores durante la transmisión. De esta manera, se puede detectar si los datos han sufrido alguna alteración en el camino. No obstante, los paquetes detectados se descartan y no se cursa una nueva solicitud. Para generar la suma, se utilizan partes:</p>
+            <ol>
+              <li>de la cabecera UDP,</li>
+              <li>de los datos del usuario</li>
+              <li>y de la conocida como pseudocabecera (que contiene información sobre la cabecera IP).</li>
+            </ol>
+          </div><!-- /.blog-post -->
+
+          <div class="blog-post">
+            <h2 class="blog-post-title">¿Qué aplicaciones utilizan el protocolo UDP?</h2>
+
+            <p>El protocolo de datagramas de usuario, debido a su estructura mínima y a su falta de mecanismos que garanticen una transmisión completa y exitosa, no puede utilizarse como protocolo de transporte universal .</p>
+            <blockquote>
+              <p>En realidad, fue diseñado desde el principio pensando en aplicaciones que (todavía) no requieren un servicio de transmisión fiable. Por ello, el campo de aplicación del protocolo UDP es limitado, aunque es necesario subrayar su enorme valor,</p>
+            </blockquote>
+          </div><!-- /.blog-post -->
+
+          <div class="blog-post">
+            <h2 class="blog-post-title">El modelo de pila TCP</h2>
+
+            <p>El modelo de pila TCP contiene cuatro capas:</p>
+            <ul>
+              <li>Capa de aplicación: establece la conexión entre la aplicación y los datos. También abre el acceso a múltiples recursos de la red.</li>
+              <li>Capa de transporte: crea conexiones TCP y determina la cantidad de datos que deben enviarse.</li>
+              <li>Capa de Internet: envía paquetes IP al destino real utilizando varias redes.</li>
+            </ul>
+            <p>Mientras que el modelo de pila TCP enmarca los datos según el uso del protocolo, la Interconexión de Sistemas Abiertos (OSI) es un método conceptual basado en el tipo de comunicación de red.</p>
+          </div><!-- /.blog-post -->
+
+          <nav>
+            <ul class="pager">
+              <li><a href="#">inicio </a></li>
+              <li><a href="#">siguiente</a></li>
+            </ul>
+          </nav>
+
+       
+
+    <footer class="blog-footer">
+      <p>sem Alejandro Lopez Trujillo </a>.</p>
+      <p>
+        <a href="#">Back to top</a>
+      </p>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

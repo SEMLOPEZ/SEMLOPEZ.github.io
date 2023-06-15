@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+    <link rel="canonical" href="https://getbootstrap.com/docs/3.3/examples/blog/">
+
+    <title>Principales caracteristicas</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="starter-template.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="blog-masthead">
+      <div class="container">
+        <nav class="blog-nav">
+          <li class="active"><a href="pagina web tcpy udp.html">Inicio</a></li>
+            <li><a href="que es y como funciona.html">¿Qué es y cómo funciona?</a></li>
+           <li><a href="#">Principales características</a></li>
+            <li><a href="cliente y servidor.html">Establecimiento de la conexión entre cliente y servidor</a></li>
+            <li><a href="vulnerabilidad.html">Vulnerabilidades</a></li>
+        </nav>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="blog-header">
+        <h1 class="blog-title">Principales características</h1>
+        <p class="lead blog-description">Debido a que TCP sirve a una gran cantidad de protocolos de la capa de aplicación, es fundamental que los datos (segmentos) lleguen correctamente al destinatario, sin errores, y, en orden. Si en la transmisión de los segmentos, se corrompiesen o perdiesen, automáticamente el protocolo TCP inicia la retransmisión, sin intervención de la capa de aplicación. De esta manera, se garantiza que los datos llegan al destinatario sin errores, ya que este protocolo se encarga de solucionar cualquier tipo de problema..</p>
+      </div>
+
+      <div class="row">
+
+        <div class="col-sm-8 blog-main">
+
+          <div class="blog-post">
+            <h2 class="blog-post-title">Principales características de TCP</h2>
+
+            <p>Si busca un protocolo que permita enviar correctamente información a un destinatario, sin errores y en orden; está buscando TCP. La transmisión se realiza por segmentos y eso permite que si existe algún fallo el protocolo TCP iniciará la retransmisión, sin que interfiera la capa de aplicación. De esta forma se garantiza la integridad de los datos al llegar a su destinatario. TCP se encarga de resarcir cualquier tipo de dificultad.</p>
+            <hr>
+            <p>TCP tiene un tamaño máximo de bytes que puede recibir en un mismo segmento y es definido por el MSS (Maximum Segment Size). El MSS es a nivel de capa de transporte y es lo suficientemente pequeño para evitar fragmentación del IP. Es considerado este protocolo como un mecanismo complejo en el control de errores, se utiliza el método de ventana deslizante para que todos los segmentos lleguen correctamente.
+
+</p>
+            <blockquote>
+              <p>Protocolo UDP</p>
+            </blockquote>
+            <p>El protocolo de datagramas de usuario (en inglés: User Datagram Protocol o UDP) es otro protocolo fundamental del internet y también nos permite que las aplicaciones se puedan comunicar entre sí. En este caso los routers solamente tienen que enviar los diagramas (unidad de medida en UDP). UDP da soporte a otros protocolos de la capa de aplicación como DNS e incluso el protocolo DHCP para obtener y proporcionar direccionamiento IP de manera automática.</p>
+            
+            <h2>Principales características de UDP</h2>
+            <p>UDP como protocolo permite el envío de diagramas sin necesidad de establecer la conexión con anterioridad, solo es necesario tener abierto un socket en el destino para que recepciones los diagramas del origen. Este protocolo no está orientado a la conexión, a diferencia de su similar TCP (hay una fase de establecer la conexión), en este caso se envía sin establecimiento previo aviso.</p>
+            <p> Por otro lado, este protocolo no proporciona ningún tipo de control de flujo. Si un equipo envía información más rápidamente que otro, es muy probable que se pierda información debido a que colapsará al más lento. En el anterior caso es necesario el reenvío de la información.</p>
+
+            <h3>TCP vs. UDP</h3>
+            <p>Los dos protocolos son utilizados para enviar información a través de internet mediante paquetes. TCP está orientado a la conexión, y después de establecerla, los datos viajan bidireccionalmente, aunque es más lento por la cantidad de funciones que realiza. UDP es un poco más simple que no posee conexión.</p>
+<p>TCP es mucho más estable que UDP, proporciona la posibilidad de corregir errores y una alta fiabilidad. Aunque UDP es mucho más rápido que TCP porque no proporciona una corrección de errores. Por su parte TCP maneja por encima de UDP el control de flujo. En el uso de la web, correo electrónico y Shell seguro lo más recomendable es utilizar un protocolo TCP.</p>
+
+
+            <h3>Conclusiones (TCP y UDP)</h3>
+            <p>Finalmente estamos en condiciones de decir que ambos protocolos coexisten de forma armónica en articulación de los protocolos IP, pero ambos tienen sus funciones diferentes. Debido a sus características el protocolo UDP está dirigido al streaming de audio y video, mientras que TCP se utiliza para elementos que requieran mayor fiabilidad en su transmisión. Esperamos haber cumplido nuestra meta y tenga un conocimiento básico acerca de estos dos tipos de protocolos de transmisión.
+
+</p>
+
+
+            </blockquote>
+          </div><!-- /.blog-post -->
+
+            
+          <nav>
+            <ul class="pager">
+              <li><a href="#">inicio </a></li>
+              <li><a href="#">siguiente</a></li>
+            </ul>
+          </nav>
+
+       
+
+    <footer class="blog-footer">
+      <p>sem Alejandro Lopez Trujillo </a>.</p>
+      <p>
+        <a href="#">Back to top</a>
+      </p>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

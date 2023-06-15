@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+    <link rel="canonical" href="https://getbootstrap.com/docs/3.3/examples/blog/">
+
+    <title>¿qué es y cómo funciona?</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="starter-template.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="blog-masthead">
+      <div class="container">
+        <nav class="blog-nav">
+          <li class="active"><a href="pagina web tcpy udp.html">Inicio</a></li>
+            <li><a href="#">¿Qué es y cómo funciona?</a></li>
+           <li><a href="#">Principales características</a></li>
+            <li><a href="#">Establecimiento de la conexión entre cliente y servidor</a></li>
+            <li><a href="#">Vulnerabilidades</a></li>
+            <li><a href="#">Diferencias de rendimiento</a></li>
+        </nav>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="blog-header">
+        <h1 class="blog-title">Protocolo TCP: ¿qué es y cómo funciona?</h1>
+        <p class="lead blog-description">El protocolo TCP (Protocolo de Control de Transmisión) es uno de los protocolos fundamentales en Internet, nos permite que las aplicaciones puedan comunicarse con garantías independientemente de las capas inferiores del modelo TCP/IP. Esto significa que los routers (capa de red en el modelo TCP/IP) solamente tienen que enviar los segmentos (unidad de medida en TCP), sin preocuparse si van a llegar esos datos correctamente o no. TCP da soporte a múltiples protocolos de la capa de aplicación, como, por ejemplo, HTTP (web), HTTPS (web segura), POP3 (correo entrante) y SMTP (correo saliente) así como sus versiones seguras utilizando TLS. También se utiliza TCP en protocolos tan importantes como FTP, FTPES y SFTP para transferir archivos desde un origen a un destino, e incluso el protocolo SSH para administrar equipos de forma local y remota de manera segura utiliza el protocolo TCP.</p>
+      </div>
+
+      <div class="row">
+
+        <div class="col-sm-8 blog-main">
+
+          <div class="blog-post">
+            <h2 class="blog-post-title">Protocolos de redes: guía completa con los protocolos básicos</h2>
+
+            <p>Estamos seguros que has escuchado o leído en varios portales acerca de protocolos como TCP o IP. Sin embargo, ¿te has preguntado cómo funcionan en realidad? ¿Es posible utilizarlos conjuntamente con otros protocolos? Esta guía te ayudará a aclarar esas dudas y darte el conocimiento esencial para comenzar a construir un conocimiento sólido sobre redes. </p>
+            <hr>
+            <blockquote>
+              <p>Protocolos básicos en redes</p>
+            </blockquote>
+            <p>Si estás interesado en la seguridad informática o quieres dedicarte al mundo de las redes de telecomunicaciones, es fundamental contar con un manejo claro de los fundamentos de los principales protocolos que existen actualmente. A su vez, te permitirá comprender mucho más fácilmente la manera en que se establecen los distintos tipos de comunicación a través de las redes locales y también de Internet.</p>
+            
+            <h2>Los protocolos de red:</h2>
+            <p>son un conjunto de reglas que gobiernan la comunicación entre dispositivos que están conectados a una red. Dichas reglas se constituyen de instrucciones que permiten a los dispositivos identificarse y conectarse entre sí, además de aplicar reglas de formateo, para que los mensajes viajen de la forma adecuada de principio a fin. Dichas reglas de formateo determinan si los datos son recibidos correctamente o si son rechazados o ha habido algún tipo de problema en la transferencia de la información.</p>
+            <p>Cuando se lleva a cabo la comunicación entre ordenadores conectados a una misma red, los datos se parten en paquetes de datos más pequeños, normalmente tienen una longitud de 1500 bytes, ya que es el típico MTU (Maximum Transfer Unit) que se suele utilizar en las redes. No obstante, las redes locales profesionales utilizan un MTU de 9000 bytes o superior, son los conocidos como Jumbo Frames, esto permite optimizar el máximo la transferencia de datos ya que se van a transferir menos cabeceras que también tienen un cierto tamaño. Por supuesto, una vez que hemos partido los datos en paquetes más pequeños, al llegar al destinatario, es necesario reensamblarlos para posteriormente pasarlos a capa de aplicación.</p>
+
+           
+            <h3>Modelo OSI</h3>
+            <p>Para poder entender un poco mejor todos los protocolos que nos podemos encontrar, no podemos obviar el Modelo OSI. Este es un modelo de interconexión de sistemas abiertos. Este modelo conceptual ha sido creado por la Organización Internacional de Normalización (OSI), y permite que diferentes sistemas se puedan comunicar utilizando algunos protocolos estandarizados. Entonces estamos ante la base de la comunicación entre diferentes sistemas. Se podría llegar a entender como un lenguaje universal, que consiste en realizar una segmentación del sistema de comunicaciones en diferentes capas. Siete concretamente, las cuales son abstractas y se representan apiladas de forma vertical.</p>
+            <p>Cada una de estas capas tiene su función, y a su vez se comunica con las otras capas. Tanto las inferiores, como las superiores. Aquí podemos ver por ejemplo algunos de los ataques más famosos. Los cuales son:</p>
+            <ul>
+              <li>DDoS: Están dirigidos a las capas específicas de las conexiones de red, buscando saturar los sistemas.</li>
+              <li>Ataques de capa de aplicación: Dirigidos a la capa 7.</li>
+              <li>Ataques de capa protocolo: Se dirigen a las capas 3 y 4.</li>
+
+            </ul>
+            
+          </div><!-- /.blog-post -->
+
+          <div class="blog-post">
+            <h2 class="blog-post-title">Protocolo TCP</h2>
+
+            <p>Para comprender las diferencias entre TCP y UDP, es importante comprender cómo cada protocolo implementa funciones de confiabilidad específicas y cómo cada protocolo rastrea las conversaciones.</p>
+            <blockquote>
+              
+            </blockquote>
+          </div><!-- /.blog-post -->
+
+          <div class="blog-post">
+            <h2 class="blog-post-title"> Protocolo UDP</h2>
+
+            <p>UDP es un protocolo de transporte de mejor esfuerzo. UDP es un protocolo de transporte liviano que ofrece la misma segmentación y reensamblaje de datos que TCP, pero sin la confiabilidad de TCP y el control de flujo.
+
+UDP es un protocolo tan simple que generalmente se describe en términos de lo que no hace en comparación con TCP.Las características UDP incluyen lo siguiente:</p>
+            <ul>
+              <li>Los datos se reconstruyen en el orden en que se reciben.</li>
+              <li>Los segmentos que se pierden no se vuelven a enviar.</li>
+              <li>No hay establecimiento de sesión.</li>
+            </ul>
+            <p>UDP es un protocolo sin estado, lo que significa que ni el cliente ni el servidor rastrean el estado de la sesión de comunicación. Si se requiere confiabilidad cuando se usa UDP como protocolo de transporte, la aplicación debe manejarlo.</p>
+          </div><!-- /.blog-post -->
+
+          <nav>
+            <ul class="pager">
+              <li><a href="pagina web tcpy udp.html">inicio </a></li>
+              <li><a href="principales caracteristecas.html">siguiente</a></li>
+            </ul>
+          </nav>
+
+       
+
+    <footer class="blog-footer">
+      <p>sem Alejandro Lopez Trujillo </a>.</p>
+      <p>
+        <a href="#">Back to top</a>
+      </p>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

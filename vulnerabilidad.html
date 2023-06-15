@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+    <link rel="canonical" href="https://getbootstrap.com/docs/3.3/examples/blog/">
+
+    <title>Vulnerabilidades</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="starter-template.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="blog-masthead">
+      <div class="container">
+        <nav class="blog-nav">
+          <li class="active"><a href="pagina web tcpy udp.html">Inicio</a></li>
+            <li><a href="que es y como funciona.html">¿Qué es y cómo funciona?</a></li>
+           <li><a href="características.html">Principales características</a></li>
+            <li><a href="cliente y servidor.html">Establecimiento de la conexión entre cliente y servidor</a></li>
+            <li><a href="#">Vulnerabilidades</a></li>
+        </nav>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="blog-header">
+        <h1 class="blog-title">Vulnerabilidades</h1>
+        <p class="lead blog-description">Como hemos visto previamente, uno de los ataques más utilizados hoy en día es el de inundación de paquetes. Este tiene el objetivo de provocar la denegación del servicio, lo cual hace que el servidor no sea capaz de atender a todas las peticiones de forma correcta. La intención no es la de sobrecargar ni acabar con la memoria del servidor, si no que el objetivo suele ser el acabar con las conexiones no terminadas en el mismo. Esto puede ocurrir con cierta facilidad.</p>
+      </div>
+
+      <div class="row">
+
+        <div class="col-sm-8 blog-main">
+
+          <div class="blog-post">
+            <h2 class="blog-post-title">Por qué algunos puertos TCP y UDP son peligrosos</h2>
+
+            <p>En la capa de transporte del modelo TCP/IP, disponemos de dos tipos de protocolos: TCP y UDP. Ambos se utilizan constantemente por los diferentes programas y protocolos de la capa de aplicación, como el puerto 80 y 443 para navegar por la web, el puerto 22 para el protocolo SSH, o el popular puerto 1194 para las VPN con OpenVPN. Algunos de estos puertos son bastante peligrosos si no los filtramos correctamente con un firewall, porque podrían realizarnos diferentes tipos de ataques e incluso hackearnos nuestro equipo. Hoy en RedesZone os vamos a enseñar cuáles son los puertos que debemos proteger especialmente para evitar problemas. </p>
+            <hr>
+            
+            <blockquote>
+              <p>Puertos conocidos</p>
+            </blockquote>
+            <p>Los puertos conocidos (well-known en inglés) van desde el puerto 0 hasta al 1023, están registrados y asignados por la Autoridad de Números Asignados de Internet (IANA). Por ejemplo, en este listado de puertos está el puerto 20 de FTP-Datos, el puerto 21 de FTP-Control, el puerto 22 de SSH, puerto 23 de Telnet, puerto 80 y 443 para web (HTTP y HTTPS respectivamente), y también el puerto de correo entre otros muchos protocolos de la capa de aplicación.</p>
+            
+            <h2>Puertos registrados</h2>
+            <p>Los puertos registrados van desde el puerto 1024 hasta al 49151. La principal diferencia de estos puertos, es que las diferentes organizaciones pueden hacer solicitudes a la IANA para que se le otorgue un determinado puerto por defecto, y se le asignará para su uso con una aplicación en concreto. Estos puertos registrados están reservados, y ninguna otra organización podrá registrarlos nuevamente, no obstante, normalmente están como «semireservados», porque si la organización deja de utilizarlo podrá reutilizarse por otra empresa. Un claro ejemplo de puerto registrado es el 3389, se utiliza para las conexiones RDP de Escritorio Remoto en Windows.</p>
+
+            <h3>¿Qué significan los campos en UDP?</h3>
+            <p>Puerto de origen: es el número de puerto relacionado con la aplicación del remitente del segmento UDP. Este campo representa una dirección de respuesta para el destinatario. Por lo tanto, este campo es opcional. Esto significa que si el puerto de origen no está especificado, los 16 bits de este campo se pondrán en cero. En este caso, el destinatario no podrá responder (lo cual no es estrictamente necesario, en particular para mensajes unidireccionales).</p>
+<p>Puerto de destino: este campo contiene el puerto correspondiente a la aplicación del equipo receptor al que se envía.</p>
+<p>Longitud: este campo especifica la longitud total del segmento, con el encabezado incluido. Sin embargo, el encabezado tiene una longitud de 4 x 16 bits (que es 8 x 8 bits), por lo tanto la longitud del campo es necesariamente superior o igual a 8 bytes.</p>
+<p>Suma de comprobación: es una suma de comprobación realizada de manera tal que permita controlar la integridad del segmento.</p>
+
+            <h3>Puertos efímeros</h3>
+            <p>Estos puertos van desde el 49152 hasta el 65535, este rango de puertos se utiliza por los programas del cliente, y están constantemente reutilizándose. Este rango de puertos normalmente se utiliza cuando está transmitiendo a un puerto conocido o reservado desde otro dispositivo, como en el caso de web o FTP pasivo. Por ejemplo, cuando nosotros visitamos una web, el puerto de destino siempre será el 80 o el 443, pero el puerto de origen (para que los datos sepan cómo volver) hace uso de un puerto efímero.</p>
+            
+
+          
+
+          <div class="blog-post">
+            <h2 class="blog-post-title">Diferentes estados de los puertos</h2>
+
+            <p>Para determinar el estado de los puertos, podemos utilizar tres términos los cuales varían en función de la configuración de los mismos.</p>
+            <ul>
+              <li>Puertos cerrados: Cuando la comunicación es rechazada completamente, por lo cual no generan ningún tráfico entrante o saliente.</li>
+              <li>Puertos filtrados: Todo el tráfico que transcurre por estos, es filtrado por aplicaciones de seguridad como los firewall.</li>
+              <li>Puertos abiertos: Cuando un servicio está escuchando en este puertos, y es accesible desde el exterior.</li>
+            </ul>
+          </div><!-- /.blog-post -->
+
+          <nav>
+            <ul class="pager">
+              <li><a href="#">inicio </a></li>
+              <li><a href="#">siguiente</a></li>
+            </ul>
+          </nav>
+
+       
+
+    <footer class="blog-footer">
+      <p>sem Alejandro Lopez Trujillo </a>.</p>
+      <p>
+        <a href="#">Back to top</a>
+      </p>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
